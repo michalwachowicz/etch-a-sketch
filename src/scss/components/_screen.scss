@@ -5,12 +5,14 @@
   width: 80%;
   padding-top: 80%;
   margin: 0 auto;
+  background-color: lighten($pixel-painted, 10%);
 }
 
 .screen {
   display: grid;
   position: absolute;
   inset: 0;
+  gap: 1px;
 
   &__item {
     height: auto;
