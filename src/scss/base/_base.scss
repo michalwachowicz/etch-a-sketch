@@ -1,0 +1,6 @@
+@use '../abstracts/colors' as *;
+
+body {
+  text-align: center;
+  background-color: $red;
+}

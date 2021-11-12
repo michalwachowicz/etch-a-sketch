@@ -1,0 +1,30 @@
+@use '../abstracts/colors' as *;
+
+.screen-container {
+  position: relative;
+  width: 80%;
+  padding-top: 80%;
+  margin: 0 auto;
+}
+
+.screen {
+  display: grid;
+  position: absolute;
+  inset: 0;
+
+  &__item {
+    height: auto;
+    background-color: $pixel;
+
+    &--painted {
+      background-color: $pixel-painted;
+    }
+  }
+}
+
+@for $i from 10 through 100 {
+  .screen--s--#{$i} {
+    grid-template-columns: repeat($i, 1fr);
+    grid-template-rows: repeat($i, 1fr);
+  }
+}

@@ -1,0 +1,20 @@
+@use '../abstracts/colors';
+@use '../abstracts/fonts';
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  color: colors.$gold;
+  font-family: fonts.$serif-font;
+  font-size: 1rem;
+  font-style: italic;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+  &__name {
+    margin: 0 1rem;
+    font-family: fonts.$handwritten-font;
+    font-size: 2rem;
+  }
+}
