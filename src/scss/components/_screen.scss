@@ -15,13 +15,13 @@
   gap: 1px;
 
   &__item {
-    height: auto;
+    padding-top: 100%;
   }
 }
 
 @for $i from 10 through 100 {
   .screen--s--#{$i} {
     grid-template-columns: repeat($i, 1fr);
-    grid-template-rows: repeat($i, 1fr);
+    grid-auto-rows: 1fr;
   }
 }
