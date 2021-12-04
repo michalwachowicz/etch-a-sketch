@@ -22,7 +22,9 @@ function reset() {
 }
 
 function clearScreen() {
-  screen.innerHTML = ''
+  while (screen.firstChild) {
+    screen.removeChild(screen.firstChild)
+  }
 }
 
 function generateGrid(size) {
@@ -33,7 +35,6 @@ function generateGrid(size) {
 
     item.className = 'screen__item'
     item.addEventListener('mouseover', paint)
-    item.addEventListener('touchstart', paint)
 
     screen.appendChild(item)
   }
