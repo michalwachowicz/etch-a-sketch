@@ -1,8 +1,17 @@
 const screen = document.querySelector('.screen')
 const resetBtn = document.querySelector('.btn--reset')
 
+function getAlpha(element) {
+  let alpha = +window
+    .getComputedStyle(element)
+    .backgroundColor.match(/[.?\d]+/g)[3]
+
+  if (alpha > 0) return alpha - 0.1
+  return alpha
+}
+
 function paint(e) {
-  e.target.classList.add('screen__item--painted')
+  e.target.style.backgroundColor = `rgba(255, 255, 255, ${getAlpha(e.target)})`
 }
 
 function reset() {
@@ -34,6 +43,7 @@ function generateGrid(size) {
     const item = document.createElement('div')
 
     item.className = 'screen__item'
+    item.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'
     item.addEventListener('mouseover', paint)
 
     screen.appendChild(item)
