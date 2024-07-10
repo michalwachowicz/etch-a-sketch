@@ -37,6 +37,4 @@ h1 {
 
 .box {
   height: 0;
-  width: calc(100% / 16);
-  padding-bottom: calc(100% / 16);
 }
