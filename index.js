@@ -25,28 +25,17 @@ container.addEventListener("mouseover", (e) => {
   if (!box || !box.classList.contains("box")) return;
 
   const backgroundColor = box.style.backgroundColor;
-  let r, g, b, a;
+  const opacity = Math.min((parseFloat(box.style.opacity) || 0) + 0.1, 1);
 
-  if (backgroundColor) {
-    const rgbaRegex = /rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)/;
-    const match = backgroundColor.match(rgbaRegex);
+  if (!backgroundColor) {
+    const r = getRandomInt(255);
+    const g = getRandomInt(255);
+    const b = getRandomInt(255);
 
-    if (match) {
-      [_, r, g, b, a] = match;
-
-      r = parseInt(r);
-      g = parseInt(g);
-      b = parseInt(b);
-      a = Math.min((parseFloat(a) || 0) + 0.1, 1);
-    }
-  } else {
-    r = getRandomInt(255);
-    g = getRandomInt(255);
-    b = getRandomInt(255);
-    a = 0.1;
+    box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
 
-  box.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
+  box.style.opacity = opacity;
 });
 
 newGridBtn.addEventListener("click", () => {
