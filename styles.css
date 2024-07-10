@@ -1,17 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Tiny5&display=swap");
 
+:root {
+  --yellow: #fde514;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+body,
+button {
   font-family: "Tiny5", Arial, Helvetica, sans-serif;
 }
 
 h1 {
-  color: #fde514;
+  color: var(--yellow);
   font-size: 56px;
   text-align: center;
 }
@@ -33,4 +38,14 @@ h1 {
   max-width: 960px;
   width: 100%;
   background-color: #cccfce;
+}
+
+.new-grid-btn {
+  cursor: pointer;
+  background: none;
+  color: var(--yellow);
+  font-size: 18px;
+  padding: 16px 32px;
+  border: 2px solid var(--yellow);
+  border-radius: 8px;
 }
