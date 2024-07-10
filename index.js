@@ -17,4 +17,12 @@ const generateGrid = (size) => {
   }
 };
 
+container.addEventListener("mouseover", (e) => {
+  const box = e.target;
+
+  if (box && box.classList.contains("box")) {
+    box.style.backgroundColor = "black";
+  }
+});
+
 generateGrid(16);
