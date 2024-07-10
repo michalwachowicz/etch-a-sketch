@@ -1,6 +1,8 @@
 const container = document.querySelector(".grid-container");
 const newGridBtn = document.querySelector(".new-grid-btn");
 
+const getRandomInt = (max) => Math.floor(Math.random() * max);
+
 const generateGrid = (size) => {
   while (container.firstChild) {
     container.removeChild(container.lastChild);
@@ -22,7 +24,11 @@ container.addEventListener("mouseover", (e) => {
   const box = e.target;
 
   if (box && box.classList.contains("box")) {
-    box.style.backgroundColor = "black";
+    const r = getRandomInt(255);
+    const g = getRandomInt(255);
+    const b = getRandomInt(255);
+
+    box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
 });
 
