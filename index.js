@@ -1,4 +1,5 @@
 const container = document.querySelector(".grid-container");
+const newGridBtn = document.querySelector(".new-grid-btn");
 
 const generateGrid = (size) => {
   while (container.firstChild) {
@@ -23,6 +24,19 @@ container.addEventListener("mouseover", (e) => {
   if (box && box.classList.contains("box")) {
     box.style.backgroundColor = "black";
   }
+});
+
+newGridBtn.addEventListener("click", () => {
+  let size;
+
+  do {
+    size = prompt("Specify the grid size (8-100):");
+
+    if (!size) return;
+    size = parseInt(size);
+  } while (isNaN(size) || size < 8 || size > 100);
+
+  generateGrid(size);
 });
 
 generateGrid(16);
