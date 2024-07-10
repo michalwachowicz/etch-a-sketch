@@ -28,13 +28,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   max-width: 960px;
-  height: 0;
   width: 100%;
   margin: 0 auto;
-  padding-bottom: 100%;
   background-color: #cccfce;
-}
-
-.box {
-  height: 0;
 }
